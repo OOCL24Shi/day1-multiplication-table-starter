@@ -12,10 +12,14 @@ public class MultiplicationTableBuilder {
     }
 
     public String build(int start, int end) {
-        return "";
+        boolean isValid = isValid(start, end);
+        if (isValid) {
+            return generateTable(start, end);
+        } else {
+            return null;
+        }
     }
-
-
+    
 
     public boolean isValid(int start, int end) {
         return isInRange(start) && isInRange(end) && isStartNotBiggerThanEnd(start, end);
