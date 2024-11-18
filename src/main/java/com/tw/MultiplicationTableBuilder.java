@@ -29,6 +29,13 @@ public class MultiplicationTableBuilder {
         return start <= end;
     }
 
+    public String generateLine(int start, int row) {
+        StringBuilder line = new StringBuilder();
+        for (int j = start; j <= row; j++) {
+            line.append(generateExpression(j, row)).append(" ");
+        }
+        return line.toString().trim();
+    }
 
     public String generateExpression(int multiplicand, int multiplier) {
         int product = multiplicand * multiplier;
