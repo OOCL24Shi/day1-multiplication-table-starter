@@ -29,6 +29,14 @@ public class MultiplicationTableBuilder {
         return start <= end;
     }
 
+    public String generateTable(int start, int end) {
+        StringBuilder table = new StringBuilder();
+        for (int i = start; i <= end; i++) {
+            table.append(generateLine(start, i)).append("\n");
+        }
+        return table.toString().trim();
+    }
+
     public String generateLine(int start, int row) {
         StringBuilder line = new StringBuilder();
         for (int j = start; j <= row; j++) {
